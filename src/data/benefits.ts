@@ -1,19 +1,20 @@
-import type { CardItem } from '../types/index';
+// src/data/benefits.ts
+import type { CardItem } from '../types';
 
 export const benefitsData: CardItem[] = [
   {
-    icon: "🏪",
-    title: "Para emprender",
-    description: "Abre, formaliza o amplía tu negocio en una ciudad comercial organizada por zonas, con todo lo que necesitas en un solo lugar."
+    icon: '🏬', // Puedes reemplazar por un SVG si lo prefieres
+    title: 'Abrir o expandir un negocio',
+    description: 'Un espacio propio para vender, crecer y atender clientes en una zona comercial organizada.'
   },
   {
-    icon: "🔑",
-    title: "Para alquilar más adelante",
-    description: "Adquiere un local que puede ser usado por comerciantes que buscan ubicación, movimiento y orden en una zona con actividad creciente."
+    icon: '🔑',
+    title: 'Generar ingresos por alquiler',
+    description: 'Un local también puede convertirse en una fuente de ingresos para el futuro.'
   },
   {
-    icon: "🌱",
-    title: "Para comprar pensando en el futuro",
-    description: "Asegura una oportunidad comercial que puede acompañar el crecimiento de tu familia en una zona estratégica de Arequipa Norte."
+    icon: '🌱',
+    title: 'Construir patrimonio',
+    description: 'Una propiedad comercial puede seguir generando valor con el paso del tiempo.'
   }
 ];
