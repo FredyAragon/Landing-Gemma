@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'accent' | 'outline';
+  variant?: 'primary' | 'secondary' | 'accent' | 'outline' | 'mint';
   fullWidth?: boolean;
   children: React.ReactNode;
 }
@@ -20,7 +20,8 @@ export const Button: React.FC<ButtonProps> = ({
     primary: "bg-purple-700 hover:bg-purple-800 text-white", // Morado principal
     secondary: "bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-200", // Lila claro
     accent: "bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold", // Amarillo de conversión urgente
-    outline: "border border-slate-200 text-slate-700 hover:bg-slate-50" // Transparente con borde gris fino
+    outline: "border border-slate-200 text-slate-700 hover:bg-slate-50", // Transparente con borde gris fino
+    mint: "bg-[#65FFCC] hover:bg-[#4FE6B5] text-[#0A051D] font-semibold", // Verde menta de marca (CTA navbar)
   };
 
   const widthClass = fullWidth ? "w-full" : "w-max";

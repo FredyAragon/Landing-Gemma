@@ -5,16 +5,37 @@ import HeroMetrics from './HeroMetrics';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-[#4c1d95] via-[#3b0764] to-[#1e1b4b] text-white pt-28 pb-16 px-4 md:px-8 flex items-center overflow-hidden">
-      {/* Efecto de cuadrícula/puntos sutil de fondo */}
-      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+    <section className="relative min-h-screen flex items-center overflow-hidden text-white pt-28 pb-16 px-4 md:px-8">
       
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full relative z-10">
+      {/* Video de fondo */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      >
+        <source src="/VideoHero.mp4" type="video/mp4" />
+      </video>
+
+      {/* Overlay con gradiente morado (según especificación de Figma: #540ED5 en 0%, 68.16%, 100%) */}
+      <div 
+        className="absolute inset-0 z-10"
+        style={{
+          background: 'linear-gradient(135deg, #540ED5 0%, rgba(84,14,213,0.75) 68.16%, #540ED5 100%)'
+        }}
+      ></div>
+
+      {/* Efecto de cuadrícula/puntos sutil sobre el overlay */}
+      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px] z-10"></div>
+      
+      {/* Contenido — por encima del video y los overlays */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full relative z-20">
         
         {/* Columna Izquierda: Mensaje de Marca (7 de 12 columnas en Desktop) */}
         <div className="lg:col-span-7 flex flex-col items-start gap-6 text-left">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold bg-white/10 text-purple-200 px-3 py-1 rounded-full border border-white/5">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <div className="inline-flex items-center gap-2 text-xs font-semibold bg-white/10 text-purple-200 px-3 py-1 rounded-full border border-white/5 backdrop-blur-sm">
+            <span className="w-2 h-2 rounded-full bg-[#65FFCC]"></span>
             Zamácola - Arequipa Norte • Cerca al Aeropuerto
           </div>
           
@@ -32,14 +53,7 @@ const Hero: React.FC = () => {
             <Button variant="accent" className="w-full sm:w-auto px-8 py-3.5">
               🏪 Quiero recibir asesoría
             </Button>
-            <Button variant="outline" className="w-full sm:w-auto border-white/20 text-white hover:bg-white/10 px-8 py-3.5">
-              🗓️ Agendar visita a Gemma
-            </Button>
           </div>
-
-          <p className="text-[11px] text-purple-300/80 italic">
-            ✨ Te orientamos según tu objetivo, presupuesto y forma de pago.
-          </p>
 
           {/* Subcomponente de Métricas */}
           <div className="w-full mt-6">

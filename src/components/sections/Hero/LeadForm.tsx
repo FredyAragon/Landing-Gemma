@@ -78,26 +78,10 @@ const LeadForm: React.FC = () => {
           </select>
         </div>
 
-        {/* Select: Método de pago */}
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs font-bold text-slate-700">¿Cómo te gustaría comprar?</label>
-          <select
-            name="paymentMethod"
-            value={formData.paymentMethod}
-            onChange={handleChange}
-            className="w-full px-4 py-3 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-purple-600 focus:bg-white transition-colors text-slate-700"
-            required
-          >
-            <option value="">Elige una opción</option>
-            <option value="contado">Pago al contado / Fondos propios</option>
-            <option value="financiamiento">Financiamiento bancario / Crédito</option>
-            <option value="cuotas">Planes de cuotas directas</option>
-          </select>
-        </div>
 
-        {/* Select: Cuándo visitar */}
+        {/* Select: Qué etapa del negocio estás en */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-xs font-bold text-slate-700">¿Cuándo te gustaría visitar Gemma?</label>
+          <label className="text-xs font-bold text-slate-700">¿En qué etapa te encuentras?</label>
           <select
             name="visitSchedule"
             value={formData.visitSchedule}
@@ -106,9 +90,9 @@ const LeadForm: React.FC = () => {
             required
           >
             <option value="">Elige una opción</option>
-            <option value="esta_semana">Esta misma semana</option>
-            <option value="proxima_semana">La próxima semana</option>
-            <option value="solo_info">Por ahora solo deseo información virtual</option>
+            <option value="esta_semana">Recien empezando</option>
+            <option value="proxima_semana">Ya estoy consolidado</option>
+            <option value="solo_info">Establecido y nombre</option>
           </select>
         </div>
 
