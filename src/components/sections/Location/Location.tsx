@@ -1,9 +1,7 @@
-// src/components/sections/Location/Location.tsx
 import React from 'react';
-import MapPlaceholder from './MapPlaceholder';
+import mapImage from '../../../assets/UbicacionGemma.jpeg';
 
 const Location: React.FC = () => {
-  // Ajustamos los puntos a los 3 reales de la maqueta de Figma
   const points = [
     { icon: "🛣️", text: "Conexión con Av. Aviación y Vía de Evitamiento" },
     { icon: "📈", text: "Zona comercial en crecimiento" },
@@ -11,72 +9,74 @@ const Location: React.FC = () => {
   ];
 
   return (
-    // Color de fondo exacto del contenedor general según Figma: #F8F7FC
-    <section className="py-20 px-4 md:px-8 bg-[#F8F7FC]">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-        
-        {/* Columna Izquierda: Datos Estratégicos (6 de 12 columnas) */}
+    <section className="py-20 px-4 md:px-8 bg-[#F0EEF8]">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+
+        {/* Columna Izquierda: Textos y Puntos */}
         <div className="lg:col-span-6 flex flex-col items-start text-left">
-          
-          {/* Píldora de Ubicación Estratégica */}
-          <div className="flex justify-start mb-6">
-            <span 
-              style={{ 
-                fontSize: '24px', 
-                lineHeight: '18px', 
-                letterSpacing: '1.32px',
-                color: '#3C3C48',
-                backgroundColor: '#C1FFEA'
-              }}
-              className="inline-block font-semibold px-6 py-3 rounded-full uppercase text-center select-none"
-            >
-              Ubicación estratégica
+
+          <div className="mb-5">
+            <span className="inline-block font-bold px-4 py-2 rounded-full uppercase text-[11px] tracking-widest text-[#3C3C48] bg-[#FFF3C7]">
+              Ubicación Estratégica
             </span>
           </div>
 
-          {/* Título Principal */}
-          <h2 
-            style={{ 
-              fontSize: '54px', 
-              lineHeight: '59px',
-              color: '#1A1430'
-            }}
-            className="font-bold w-full max-w-2xl mb-4 tracking-tight"
-          >
-            En una de las zonas <span className="text-[#540ED5]">con mayor crecimiento comercial de Arequipa</span>
+          <h2 className="font-bold max-w-xl mb-5 tracking-tight text-[48px] leading-[56px] text-[#1A1430]">
+            En una de las zonas{' '}
+            <span className="text-[#6B21E8]">
+              con mayor crecimiento comercial de Arequipa
+            </span>
           </h2>
 
-          {/* Subtítulo / Párrafo Descriptivo con especificaciones exactas */}
-          <p
-            style={{
-              fontSize: '16px',
-              lineHeight: '27px',
-              color: '#4A4360'
-            }}
-            className="font-normal max-w-xl mb-8"
-          >
+          <p className="max-w-md mb-8 text-[15px] leading-[26px] text-[#4A4360]">
             Ubicado en Zamácola, cerca del aeropuerto y con acceso a importantes vías de la ciudad.
           </p>
-          
-          {/* Contenedor de filas (Cada una representará los Frames de 63px) */}
-          <div className="flex flex-col w-full max-w-md mt-2">
+
+          <div className="flex flex-col w-full max-w-md">
             {points.map((point, index) => (
-              <div 
-                key={index} 
-                className="h-[63px] flex items-center gap-4 border-b border-[#E8E6F0] last:border-b-0"
-              >
-                <span className="text-xl">{point.icon}</span>
-                <p className="text-slate-700 text-sm md:text-base font-medium">
+              <div key={index} className="flex items-center gap-4 py-4 border-b border-[#E0DCF0] last:border-b-0">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center text-base flex-shrink-0 bg-[#FFF3C7]">
+                  {point.icon}
+                </div>
+                <p className="text-sm font-medium text-[#3C3C48]">
                   {point.text}
                 </p>
               </div>
             ))}
           </div>
+
         </div>
 
-        {/* Columna Derecha: Mapa */}
-        <div className="lg:col-span-6 w-full">
-          <MapPlaceholder />
+        {/* Columna Derecha: Mapa y Botón Corregido */}
+        <div className="lg:col-span-6 flex flex-col items-center gap-8">
+
+          <div className="w-full rounded-3xl overflow-hidden shadow-md border border-slate-200/60">
+            <img
+              src={mapImage}
+              alt="Mapa ubicación Gemma - Zamácola, Arequipa"
+              className="w-full h-auto object-cover max-h-[420px] object-center"
+            />
+          </div>
+
+          <a
+            href="https://maps.app.goo.gl/wShq9GszGgqf4SAn9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-white font-semibold py-4 px-10 rounded-full text-sm bg-[#540ED5] hover:opacity-90 transition-all shadow-[0_10px_25px_-5px_rgba(84,13,213,0.4)] hover:shadow-[0_12px_30px_-5px_rgba(84,13,213,0.5)]"
+          >
+            Ver ubicación en Google Maps
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              strokeWidth={2.5} 
+              stroke="currentColor" 
+              className="w-4 h-4"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+
         </div>
 
       </div>

@@ -1,21 +1,27 @@
+// src/components/sections/CommercialZones/ZoneCard.tsx
 import React from 'react';
-import type { CardItem } from '../../../types';
+import type { ZoneItem } from '../../../data/zones';
 
 interface ZoneCardProps {
-  zone: CardItem;
+  zone: ZoneItem;
 }
 
-export const ZoneCard: React.FC<ZoneCardProps> = ({ zone }) => {
+const ZoneCard: React.FC<ZoneCardProps> = ({ zone }) => {
   return (
-    <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:border-purple-200 hover:shadow-sm transition-all duration-200 flex items-start gap-4 text-left">
-      <div className="text-2xl shrink-0 bg-slate-50 p-2.5 rounded-xl border border-slate-100/40">
-        {zone.icon}
+    <div className="flex-shrink-0 snap-start w-[260px] sm:w-[300px] md:w-[320px] bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+      <div className="w-full h-48 md:h-56 overflow-hidden">
+        <img
+          src={zone.image}
+          alt={zone.title}
+          loading="lazy"
+          className="w-full h-full object-cover"
+        />
       </div>
-      <div className="flex flex-col gap-1">
-        <h3 className="text-sm md:text-base font-sans font-bold text-slate-900 tracking-wide">
+      <div className="p-5 text-left">
+        <h3 className="text-base md:text-lg font-bold text-[#1A1430] mb-1">
           {zone.title}
         </h3>
-        <p className="text-slate-500 text-xs leading-relaxed">
+        <p className="text-sm text-[#6B6680]">
           {zone.description}
         </p>
       </div>
