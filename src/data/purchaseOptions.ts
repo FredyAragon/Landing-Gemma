@@ -1,9 +1,25 @@
-import type { CardItem } from '../types/index';
+// src/data/purchaseOptions.ts
 
-export const purchaseOptionsData: CardItem[] = [
-  { icon: "📋", title: "Separación", description: "Reserva tu local con una separación mientras evalúas las opciones." },
-  { icon: "💰", title: "Inicial", description: "Opciones de inicial según disponibilidad y perfil del comprador." },
-  { icon: "📅", title: "Cuotas", description: "Paga en cuotas ordenadas adaptadas a tu situación actual." },
-  { icon: "🏛️", title: "Financiamiento", description: "Exploramos opciones de financiamiento según tu evaluación." },
-  { icon: "🤝", title: "Acompañamiento", description: "Un asesor te guía en cada paso del proceso de compra." }
+export interface PurchaseOption {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export const purchaseOptionsData: PurchaseOption[] = [
+  {
+    icon: '📌',
+    title: 'Separa tu local',
+    description: 'Reserva tu local mientras evalúas tus opciones.',
+  },
+  {
+    icon: '💰',
+    title: 'Opciones de pago',
+    description: 'Alternativas adaptadas según tu evaluación y disponibilidad.',
+  },
+  {
+    icon: '💬',
+    title: 'Asesoría personalizada',
+    description: 'Acompañamiento durante todo el proceso.',
+  },
 ];
