@@ -1,5 +1,13 @@
 // src/data/zones.ts
 
+// 1. Importamos las imágenes desde assets de forma limpia
+import imgFeria from '../assets/1.-La feria.png';
+import imgBellaMora from '../assets/2.-Bella-Mora-A.png';
+import imgCentroLogistico from '../assets/3.-Centro-Logístico.png';
+import imgMiCasero from '../assets/4.-Mi-Casero.png';
+import imgCasaMuebles from '../assets/5.-Casa-&-Muebles.png';
+import imgBoulevard from '../assets/6.-Boulevard-Gastrononico.png'; 
+
 export interface ZoneItem {
   title: string;
   description: string;
@@ -8,53 +16,33 @@ export interface ZoneItem {
 
 export const zonesData: ZoneItem[] = [
   {
-    title: 'Ciudad Moda',
-    description: 'Ropa, calzado y accesorios de moda',
-    image: 'https://picsum.photos/seed/ciudad-moda/600/450',
+    title: 'Zona de Feria',
+    description: 'Productos variados a precios accesibles',
+    image: imgFeria,
   },
   {
-    title: 'Plaza Tec',
-    description: 'Tecnología y servicios digitales',
-    image: 'https://picsum.photos/seed/plaza-tec/600/450',
+    title: 'Zona Bella Mora',
+    description: 'Moda, belleza y cuidado personal',
+    image: imgBellaMora,
   },
   {
-    title: 'Ferreplaza',
-    description: 'Ferretería, construcción y materiales',
-    image: 'https://picsum.photos/seed/ferreplaza/600/450',
+    title: 'Zona Logística',
+    description: 'Centro logístico y almacenamiento',
+    image: imgCentroLogistico,
   },
   {
-    title: 'Sabores Gemma',
-    description: 'Restaurantes, cafés y comida rápida',
-    image: 'https://picsum.photos/seed/sabores-gemma/600/450',
+    title: 'Zona de Mercado',
+    description: 'Abarrotes, frutas y productos frescos',
+    image: imgMiCasero,
   },
   {
-    title: 'Bienestar',
-    description: 'Salud, farmacias y centros médicos',
-    image: 'https://picsum.photos/seed/bienestar/600/450',
+    title: 'Zona de Hogar',
+    description: 'Muebles y artículos para el hogar',
+    image: imgCasaMuebles,
   },
   {
-    title: 'Hogar & Deco',
-    description: 'Muebles, decoración y artículos para el hogar',
-    image: 'https://picsum.photos/seed/hogar-deco/600/450',
-  },
-  {
-    title: 'Mundo Mascotas',
-    description: 'Veterinarias, alimentos y accesorios',
-    image: 'https://picsum.photos/seed/mundo-mascotas/600/450',
-  },
-  {
-    title: 'Zona Educativa',
-    description: 'Institutos, academias y librerías',
-    image: 'https://picsum.photos/seed/zona-educativa/600/450',
-  },
-  {
-    title: 'Auto Plaza',
-    description: 'Repuestos, talleres y servicios automotrices',
-    image: 'https://picsum.photos/seed/auto-plaza/600/450',
-  },
-  {
-    title: 'Belleza Total',
-    description: 'Salones, spas y cuidado personal',
-    image: 'https://picsum.photos/seed/belleza-total/600/450',
+    title: 'Zona de Restaurantes',
+    description: 'Comida y experiencias gastronómicas',
+    image: imgBoulevard,
   },
 ];
